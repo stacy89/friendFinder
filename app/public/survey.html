@@ -113,7 +113,7 @@
 			</select>
 
 			<h2>Question 9</h2>
-			<p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.p>
+			<p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.<p>
 			<select id="9">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
@@ -132,14 +132,14 @@
 				<option value="3">3</option>
 				<option value="4">4</option>
 				<option value="5">5 (strongly agree)</option>
-			</select>
+			</select> <br><br>
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
 
 			<div class="modal fade" id="exampleModal" id="newUserImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   			<div class="modal-dialog" role="document">
     			<div class="modal-content">
       			<div class="modal-header">
-        			<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        			<h5 class="modal-title" id="exampleModalLabel">Your Friend Match!</h5>
         			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           			<span aria-hidden="true">&times;</span>
         			</button>
@@ -165,8 +165,8 @@
 
 	<script type="text/javascript">
 		var newUser = {
-			name: $("#userName").val().trim();
-			profilePic: $("#userPic").val().trim();
+			name: $("#userName").val().trim(),
+			profilePic: $("#userPic").val().trim(),
 			scores: [
 				$("#1").val().trim(),
 				$("#2").val().trim(),
@@ -185,9 +185,9 @@
 
 		$.post(currentURL + "/api/friends", newUser, function(data) {
 			$("#friendMatchName").text(data.name);
-			$("#friendMatchImg").attr("src", data.userPic);
+			$("#friendMatchImg").attr("src", data.profilePic);
 
-			$(".modal").modal("show");
+			// $(".modal").modal("show");
 
 			$("#userName").val("");
 			$("#userPic").val("");

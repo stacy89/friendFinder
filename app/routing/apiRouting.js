@@ -27,7 +27,7 @@ module.exports = function(app) {
 		for (var i = 0; i < friends.length; i++) {
 			var totalDiff = 0;
 			for (var j = 0; j < friends[i].scores.length; j++) {
-				var diffScore = Math.abs(friends[i].scores[j] - newFriend.scores.[j]);
+				var diffScore = Math.abs(friends[i].scores[j] - newFriend.scores[j]);
 				totalDiff += diffScore;
 			}
 			if (totalDiff < bestMatchDiff) {

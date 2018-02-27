@@ -2,7 +2,7 @@ var friends = [
 {
   name: "Chance",
   profilePic: "../images/chanceTR.jpg",
-  score: [
+  scores: [
   	"2",
   	"4",
   	"1",
@@ -13,151 +13,151 @@ var friends = [
   	"2",
   	"4",
   	"5"
-  ];
+  ]
 },
 {
   name: "Jillian",
   profilePic: "../images/jillianH.jpg",
-  score: [
+  scores: [
   	"2",
-  	"4",
   	"1",
-  	"5",
-  	"4",
+  	"1",
+  	"2",
   	"4",
   	"3",
   	"2",
+  	"5",
   	"4",
   	"5"
-  ];
+  ]
 },
 {
   name: "Kendrick",
   profilePic: "../images/kendrickL.jpg",
-  score: [
+  scores: [
   	"2",
-  	"4",
-  	"1",
   	"5",
-  	"4",
+  	"5",
+  	"1",
+  	"1",
   	"4",
   	"3",
-  	"2",
+  	"1",
   	"4",
-  	"5"
-  ];
+  	"1"
+  ]
 },
 {
   name: "Kevin",
   profilePic: "../images/kevinP.jpg",
-  score: [
-  	"2",
-  	"4",
+  scores: [
+  	"1",
+  	"5",
   	"1",
   	"5",
   	"4",
-  	"4",
   	"3",
-  	"2",
+  	"3",
+  	"3",
   	"4",
-  	"5"
-  ];
+  	"4"
+  ]
 },
 {
   name: "Megan",
   profilePic: "../images/meganJ.jpg",
-  score: [
-  	"2",
+  scores: [
+  	"1",
   	"4",
   	"1",
   	"5",
-  	"4",
+  	"3",
   	"4",
   	"3",
-  	"2",
-  	"4",
+  	"3",
+  	"3",
   	"5"
-  ];
+  ]
 },
 {
   name: "Natalie",
   profilePic: "../images/natalieP.jpg",
-  score: [
+  scores: [
   	"2",
   	"4",
   	"1",
-  	"5",
-  	"4",
-  	"4",
   	"3",
-  	"2",
   	"4",
+  	"5",
+  	"5",
+  	"2",
+  	"1",
   	"5"
-  ];
+  ]
 },
 {
   name: "Ryan",
   profilePic: "../images/RyanG.jpg",
-  score: [
+  scores: [
   	"2",
   	"4",
-  	"1",
-  	"5",
+  	"2",
   	"4",
   	"4",
+  	"2",
   	"3",
   	"2",
-  	"4",
+  	"1",
   	"5"
-  ];
+  ]
 },
 {
   name: "Sarah",
   profilePic: "../images/sarahB.jpg",
-  score: [
+  scores: [
   	"2",
-  	"4",
+  	"5",
   	"1",
   	"5",
   	"4",
-  	"4",
   	"3",
   	"2",
+  	"2",
   	"4",
-  	"5"
-  ];
+  	"1"
+  ]
 },
 {
   name: "Seth",
   profilePic: "../images/sethR.jpg",
-  score: [
-  	"2",
-  	"4",
+  scores: [
   	"1",
+  	"4",
+  	"2",
   	"5",
   	"4",
-  	"4",
+  	"2",
   	"3",
   	"2",
   	"4",
-  	"5"
-  ];
+  	"2"
+  ]
 },
 {
   name: "Yukimi",
   profilePic: "../images/YukimiN.jpg",
-  score: [
+  scores: [
   	"2",
-  	"4",
-  	"1",
+  	"3",
+  	"3",
   	"5",
   	"4",
-  	"4",
+  	"2",
   	"3",
   	"2",
   	"4",
-  	"5"
-  ];
+  	"1"
+  ]
 }
 ];
 
