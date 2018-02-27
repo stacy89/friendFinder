@@ -25,7 +25,7 @@
 			
 			<h2>Question 1</h2>
 			<p>Your mind is always buzzing with unexplored idea and plans.</p>
-			<select>
+			<select id="1">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -36,7 +36,7 @@
 
 			<h2>Question 2</h2>
 			<p>Generally speaking, you rely more on your experience than your imagination.</p>
-			<select>
+			<select id="2">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -47,7 +47,7 @@
 
 			<h2>Question 3</h2>
 			<p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
-			<select>
+			<select id="3">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -58,7 +58,7 @@
 
 			<h2>Question 4</h2>
 			<p>You rarely do something just out of sheer curiosity.</p>
-			<select>
+			<select id="4">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -69,7 +69,7 @@
 
 			<h2>Question 5</h2>
 			<p>People can rarely upset you.</p>
-			<select>
+			<select id="5">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -80,7 +80,7 @@
 
 			<h2>Question 6</h2>
 			<p>It is often difficult for you to relate to other people’s feelings.</p>
-			<select>
+			<select id="6">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -91,7 +91,7 @@
 
 			<h2>Question 7</h2>
 			<p>In a discussion, truth should be more important than people’s sensitivities.</p>
-			<select>
+			<select id="7">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -103,7 +103,7 @@
 
 		<h2>Question 8</h2>
 			<p>You rarely get carried away by fantasies and ideas.<p>
-			<select>
+			<select id="8">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -114,7 +114,7 @@
 
 			<h2>Question 9</h2>
 			<p>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.p>
-			<select>
+			<select id="9">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -125,7 +125,7 @@
 
 			<h2>Question 10</h2>
 			<p>You feel more energetic after spending time with a group of people.<p>
-			<select>
+			<select id="10">
 				<option value="">choose an option</option>
 				<option value="1">1 (strongly disagree)</option>
 				<option value="2">2</option>
@@ -135,7 +135,7 @@
 			</select>
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
 
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="exampleModal" id="newUserImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   			<div class="modal-dialog" role="document">
     			<div class="modal-content">
       			<div class="modal-header">
@@ -145,7 +145,8 @@
         			</button>
       			</div>
       			<div class="modal-body">
-						     
+							<h2 id="friendMatchName"></h2>
+            	<img id="friendMatchImg" src ="" alt="" height="350" width="300">
       			</div>
       			<div class="modal-footer">
         			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -161,6 +162,60 @@
       <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/stacy89/friendFinder">GitHub Repo</a></p>
     </div>
   </footer>
+
+	<script type="text/javascript">
+		var newUser = {
+			name: $("#userName").val().trim();
+			profilePic: $("#userPic").val().trim();
+			scores: [
+				$("#1").val().trim(),
+				$("#2").val().trim(),
+				$("#3").val().trim(),
+				$("#4").val().trim(),
+				$("#5").val().trim(),
+				$("#6").val().trim(),
+				$("#7").val().trim(),
+				$("#8").val().trim(),
+				$("#9").val().trim(),
+				$("#10").val().trim()
+			]
+		};
+
+		var currentURL = window.location.origin;
+
+		$.post(currentURL + "/api/friends", newUser, function(data) {
+			$("#friendMatchName").text(data.name);
+			$("#friendMatchImg").attr("src", data.userPic);
+
+			$(".modal").modal("show");
+
+			$("#userName").val("");
+			$("#userPic").val("");
+			$("#1").val("");
+			$("#2").val("");
+			$("#3").val("");
+			$("#4").val("");
+			$("#5").val("");
+			$("#6").val("");
+			$("#7").val("");
+			$("#8").val("");
+			$("#9").val("");
+			$("#10").val("");
+
+		});
+	</script>
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
