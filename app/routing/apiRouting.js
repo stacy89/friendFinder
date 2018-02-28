@@ -3,42 +3,41 @@ var friends = require("../data/friends");
 module.exports = function(app) {
 	app.get("/api/friends", function(req, res) {
 		res.json(friends);
+		console.log("get");
 	});
 
 	app.post("/api/friends", function(req, res) {
 		var newFriend = req.body;
-
-		var bestMatch = {};
-
-		for (i = 0; i < newFriend.scores.length; i++) {
-			if (newFriend.scores[i] === "1 (strongly agree)") {
-				newFriend.scores[i] = 1;
-			} 
-			else if (newFriend.scores[i] === "5 (strongly disagree)") {
-				newFriend.scores[i] = 5;
-			} else {
-				newFriend.scores[i] = parseInt(newFriend.scores[i]);
-			}
-		}
-
-		var bestMatchIndex = 0;
-		var bestMatchDiff = 40;
+		console.log("post");
+	
+		var tempArray = [];
+		var totalDiff = 0;
+		var matchArray = [];
 
 		for (var i = 0; i < friends.length; i++) {
-			var totalDiff = 0;
+			
+			console.log(friends[i].name);
 			for (var j = 0; j < friends[i].scores.length; j++) {
 				var diffScore = Math.abs(friends[i].scores[j] - newFriend.scores[j]);
 				totalDiff += diffScore;
 			}
-			if (totalDiff < bestMatchDiff) {
-				bestMatchIndex = i;
-				bestMatchDiff = totalDiff;
-			}
-		}
-		bestMatch = friends[bestMatchIndex];
+	
+			matchArray.push({score: totalDiff, friend: friends[i]});
 
-		friends.push(newFriend);
-		res.json(bestMatch);
+		}
+			tempArray.push(matchArray)
+
+			var lowestScoreMatch = tempArray[0][0];
+
+			for (var i = 0; i < tempArray.length; i++) {
+				if (tempArray[0][i].score < lowestScoreMatch.score) {
+						lowestScoreMatch = tempArray[0][i];
+				}
+			}
+			console.log(tempArray);
+			console.log(lowestScoreMatch);
+	
+		res.json(lowestScoreMatch);
 	});
 };
 
