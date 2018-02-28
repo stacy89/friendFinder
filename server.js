@@ -9,7 +9,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
+
 require("./app/routing/apiRouting")(app);
 require("./app/routing/htmlRouting")(app);
 
 app.listen(PORT);
+
+

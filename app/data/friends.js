@@ -1,7 +1,7 @@
 var friends = [
 {
   name: "Chance",
-  profilePic: "../images/chanceTR.jpg",
+  profilePic: "images/chanceTR.jpg",
   scores: [
   	"2",
   	"4",
@@ -17,7 +17,7 @@ var friends = [
 },
 {
   name: "Jillian",
-  profilePic: "../images/jillianH.jpg",
+  profilePic: "images/jillianH.jpg",
   scores: [
   	"2",
   	"1",
@@ -33,7 +33,7 @@ var friends = [
 },
 {
   name: "Kendrick",
-  profilePic: "../images/kendrickL.jpg",
+  profilePic: "images/kendrickL.jpg",
   scores: [
   	"2",
   	"5",
@@ -49,7 +49,7 @@ var friends = [
 },
 {
   name: "Kevin",
-  profilePic: "../images/kevinP.jpg",
+  profilePic: "images/kevinP.jpg",
   scores: [
   	"1",
   	"5",
@@ -65,7 +65,7 @@ var friends = [
 },
 {
   name: "Megan",
-  profilePic: "../images/meganJ.jpg",
+  profilePic: "images/meganJ.jpg",
   scores: [
   	"1",
   	"4",
@@ -81,7 +81,7 @@ var friends = [
 },
 {
   name: "Natalie",
-  profilePic: "../images/natalieP.jpg",
+  profilePic: "images/natalieP.jpg",
   scores: [
   	"2",
   	"4",
@@ -97,7 +97,7 @@ var friends = [
 },
 {
   name: "Ryan",
-  profilePic: "../images/RyanG.jpg",
+  profilePic: "images/RyanG.jpg",
   scores: [
   	"2",
   	"4",
@@ -113,7 +113,7 @@ var friends = [
 },
 {
   name: "Sarah",
-  profilePic: "../images/sarahB.jpg",
+  profilePic: "images/sarahB.jpg",
   scores: [
   	"2",
   	"5",
@@ -129,7 +129,7 @@ var friends = [
 },
 {
   name: "Seth",
-  profilePic: "../images/sethR.jpg",
+  profilePic: "images/sethR.jpg",
   scores: [
   	"1",
   	"4",
@@ -145,7 +145,7 @@ var friends = [
 },
 {
   name: "Yukimi",
-  profilePic: "../images/YukimiN.jpg",
+  profilePic: "images/YukimiN.jpg",
   scores: [
   	"2",
   	"3",

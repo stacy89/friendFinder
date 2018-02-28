@@ -16,7 +16,7 @@
 	</div>
 
 	<div class="container">
-		<form>
+		<form id="surveyform" method="post">
 			<label for="userName">Name (Required)</label>
 			<input type="text" class="form-control" id="userName">
 
@@ -99,7 +99,6 @@
 				<option value="4">4</option>
 				<option value="5">5 (strongly agree)</option>
 			</select>
-		</form>
 
 		<h2>Question 8</h2>
 			<p>You rarely get carried away by fantasies and ideas.<p>
@@ -133,9 +132,10 @@
 				<option value="4">4</option>
 				<option value="5">5 (strongly agree)</option>
 			</select> <br><br>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
+			<button id="surveyBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
+		</form>	
 
-			<div class="modal fade" id="exampleModal" id="newUserImage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   			<div class="modal-dialog" role="document">
     			<div class="modal-content">
       			<div class="modal-header">
@@ -154,7 +154,6 @@
     			</div>
   			</div>
 			</div>
-		</form>
 	</div>
 
 	<footer class="footer">
@@ -164,45 +163,55 @@
   </footer>
 
 	<script type="text/javascript">
-		var newUser = {
-			name: $("#userName").val().trim(),
-			profilePic: $("#userPic").val().trim(),
-			scores: [
-				$("#1").val().trim(),
-				$("#2").val().trim(),
-				$("#3").val().trim(),
-				$("#4").val().trim(),
-				$("#5").val().trim(),
-				$("#6").val().trim(),
-				$("#7").val().trim(),
-				$("#8").val().trim(),
-				$("#9").val().trim(),
-				$("#10").val().trim()
-			]
-		};
 
-		var currentURL = window.location.origin;
+		$("#surveyBtn").on("click", function(event) {
+    	console.log("jfkld;sajfkdls;a");
+    	event.preventDefault();
 
-		$.post(currentURL + "/api/friends", newUser, function(data) {
-			$("#friendMatchName").text(data.name);
-			$("#friendMatchImg").attr("src", data.profilePic);
+			var newUser = {
+				name: $("#userName").val().trim(),
+				profilePic: $("#userPic").val().trim(),
+				scores: [
+					$("#1").val().trim(),
+					$("#2").val().trim(),
+					$("#3").val().trim(),
+					$("#4").val().trim(),
+					$("#5").val().trim(),
+					$("#6").val().trim(),
+					$("#7").val().trim(),
+					$("#8").val().trim(),
+					$("#9").val().trim(),
+					$("#10").val().trim()
+				]
+			};
 
-			// $(".modal").modal("show");
+		// var currentURL = window.location.origin;
 
-			$("#userName").val("");
-			$("#userPic").val("");
-			$("#1").val("");
-			$("#2").val("");
-			$("#3").val("");
-			$("#4").val("");
-			$("#5").val("");
-			$("#6").val("");
-			$("#7").val("");
-			$("#8").val("");
-			$("#9").val("");
-			$("#10").val("");
+			$.post("/api/friends", newUser, function(data) {
 
-		});
+
+			}).then(function(data) {
+				$("#friendMatchName").text(data.friend.name);
+				$("#friendMatchImg").attr("src", data.friend.profilePic);
+
+				$("#userName").val("");
+					$("#userPic").val("");
+					$("#1").val("");
+					$("#2").val("");
+					$("#3").val("");
+					$("#4").val("");
+					$("#5").val("");
+					$("#6").val("");
+					$("#7").val("");
+					$("#8").val("");
+					$("#9").val("");
+					$("#10").val("");
+
+					$("#exampleModal").modal("show");
+					console.log(data);
+			});
+			return false;
+	});	
 	</script>
 	
 </body>
